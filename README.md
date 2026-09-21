@@ -1,4 +1,4 @@
-# 🍀 Fourleaf Reborn — Primis Wiki
+# 🍀 Fourleaf SMP — Primis Wiki
 
 A Fourleaf Reborn reference guide for the **Primis** EliteMobs questline.
 
@@ -13,11 +13,6 @@ A Fourleaf Reborn reference guide for the **Primis** EliteMobs questline.
 - [Pontis Mille Fields](docs/primis/pontis-mille-fields.md)
 - [Pontis Groves](docs/primis/pontis-groves.md)
 - [Blood Temple & Finale](docs/primis/blood-temple.md)
-
-### Source
-Quest information is based on the public Nightbreak Wiki Primis guide and reorganized/paraphrased for Fourleaf Reborn. The source currently identifies the guide as Primis v46.
-
-**Source:** https://wiki.nightbreak.io/EliteMobs/primis_info/
 
 
 ## 📖 Expanded Quest Database

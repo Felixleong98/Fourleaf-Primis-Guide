@@ -55,7 +55,7 @@ document.getElementById("sideCount").textContent=quests.filter(q=>q.type!=="main
 function render(){
  const s=search.value.toLowerCase().trim(), t=typeFilter.value, r=regionFilter.value;
  const out=quests.filter(q=>(t==="all"||q.type===t)&&(r==="all"||q.region===r)&&(!s||[q.name,q.region,q.npc,q.pre,q.reward,q.objective].join(" ").toLowerCase().includes(s)));
- results.innerHTML=out.map(q=>`<article class="quest">
+ results.innerHTML=out.map(q=>`<article class="quest" onclick="openQuest(q)" style="cursor:pointer">
   <div class="quest-top"><span class="number">${q.id?"MAIN #"+q.id:q.type.toUpperCase()}</span><span class="tag">${q.region}</span></div>
   <h3>${q.name}</h3>
   <div class="meta">👤 ${q.npc}</div>
@@ -72,3 +72,4 @@ document.querySelectorAll(".region-card").forEach(b=>b.addEventListener("click",
 const timeline=document.getElementById("timeline");
 timeline.innerHTML=mainQuests.map((q,i)=>`<div class="step"><div class="n">QUEST ${i+1}</div><h3>${q[0]}</h3><p>${q[1]} • ${q[2]} • Reward: ${q[4]}</p></div>`).join("");
 render();
+function openQuest(q){const slug=(q.id?String(q.id).padStart(2,"0")+"-"+q.name:q.type+"-"+q.name).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""); location.href="quests/"+slug+".html";}

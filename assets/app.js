@@ -50,7 +50,10 @@ const quests=mainQuests.map((q,i)=>({id:i+1,type:"main",name:q[0],region:q[1],np
 for(const [region,list] of Object.entries(sideGroups)) for(const q of list) quests.push({id:null,type:required.includes(q[0])?"required":secondary.includes(q[0])?"secondary":"side",name:q[0],region,npc:q[1],pre:q[2],reward:q[3],objective:"See the in-game quest tracker for the detailed objective."});
 
 const search=document.getElementById("search"), typeFilter=document.getElementById("typeFilter"), regionFilter=document.getElementById("regionFilter"), results=document.getElementById("results"), empty=document.getElementById("empty");
+const params=new URLSearchParams(location.search);
 [...new Set(quests.map(q=>q.region))].sort().forEach(r=>regionFilter.insertAdjacentHTML("beforeend",`<option value="${r}">${r}</option>`));
+if(params.get("region")) regionFilter.value=params.get("region");
+if(params.get("type")) typeFilter.value=params.get("type");
 document.getElementById("sideCount").textContent=quests.filter(q=>q.type==="side").length+" side";
 
 function render(){

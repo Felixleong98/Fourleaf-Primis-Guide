@@ -73,6 +73,7 @@ function render(){
 [search,typeFilter,regionFilter].forEach(el=>el.addEventListener("input",render));
 document.querySelectorAll(".region-card").forEach(b=>b.addEventListener("click",()=>{regionFilter.value=b.dataset.region;location.hash="quests";render()}));
 
+const mapHost=document.getElementById("questMap");if(mapHost){mapHost.innerHTML='<div class="quest-map-line"></div>'+mainQuests.map((q,i)=>'<a class="map-node" href="quests/'+String(i+1).padStart(2,"0")+'-'+q[0].toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")+'.html"><span class="map-number">'+(i+1)+'</span><span><b>'+q[0]+'</b><small>'+q[1]+' • '+q[2]+'</small></span></a>').join("")+'<div class="map-note">❄ <b>Ice Trial branch:</b> four required side quests unlock The Trial of Ice.</div>';}
 const timeline=document.getElementById("timeline");
 timeline.innerHTML=mainQuests.map((q,i)=>`<div class="step"><div class="n">QUEST ${i+1}</div><h3>${q[0]}</h3><p>${q[1]} • ${q[2]} • Reward: ${q[4]}</p></div>`).join("");
 render();

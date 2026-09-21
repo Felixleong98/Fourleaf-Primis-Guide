@@ -1,6 +1,6 @@
 # 🍀 Primis
 
-Primis is a large EliteMobs questing area. The story begins at Caeruleaum after a shipwreck and eventually reaches the Blood Temple.
+Primis is a large dungeon questing area. The story begins at Caeruleaum after a shipwreck and eventually reaches the Blood Temple.
 
 ## Quest types
 - ◆ Main Quest — advances the main story.

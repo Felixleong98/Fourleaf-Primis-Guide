@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fourleaf Reborn Primis Wiki — quests, rewards, prerequisites and progression.">
+  <title>🍀 Fourleaf Reborn — Primis Wiki</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav wrap">
+      <a class="brand" href="#top">🍀 Fourleaf Reborn</a>
+      <div class="navlinks">
+        <a href="#quests">Quests</a>
+        <a href="#progression">Progression</a>
+        <a href="#regions">Regions</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+    <div class="hero-inner wrap" id="top">
+      <div class="badge">PRIMIS • QUEST DATABASE</div>
+      <h1>Primis Wiki</h1>
+      <p class="hero-text">Your Fourleaf Reborn reference for the Primis adventure. Find quests, NPCs, prerequisites, objectives and rewards without digging through a giant quest chain.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#quests">Browse Quests</a>
+        <a class="button ghost" href="#progression">View Progression</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="stats">
+      <div class="stat"><strong id="mainCount">30</strong><span>Main quests</span></div>
+      <div class="stat"><strong id="sideCount">70+</strong><span>Side / optional quests</span></div>
+      <div class="stat"><strong>Lv. 0–20</strong><span>Adventure range</span></div>
+      <div class="stat"><strong>🍀</strong><span>Fourleaf Reborn</span></div>
+    </section>
+
+    <section id="quests" class="section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">DATABASE</div>
+          <h2>Quest Explorer</h2>
+          <p>Search by quest, NPC, region, prerequisite or reward.</p>
+        </div>
+        <div class="controls">
+          <input id="search" type="search" placeholder="Search quests..." aria-label="Search quests">
+          <select id="typeFilter" aria-label="Quest type">
+            <option value="all">All quest types</option>
+            <option value="main">Main quests</option>
+            <option value="side">Side quests</option>
+            <option value="required">Required side quests</option>
+            <option value="secondary">Secondary</option>
+          </select>
+          <select id="regionFilter" aria-label="Region">
+            <option value="all">All regions</option>
+          </select>
+        </div>
+      </div>
+      <div id="results" class="quest-grid"></div>
+      <div id="empty" class="empty hidden">No quests matched your search.</div>
+    </section>
+
+    <section id="progression" class="section">
+      <div class="eyebrow">STORYLINE</div>
+      <h2>Main Quest Progression</h2>
+      <p class="muted">The main route runs from the shipwreck at Caeruleaum through Gladius, Pontis Mille, the Ice Village and Terravilla, ending at the Blood Temple and the return to Caeruleaum.</p>
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <section id="regions" class="section">
+      <div class="eyebrow">WORLD</div>
+      <h2>Regions</h2>
+      <div class="region-grid">
+        <button class="region-card" data-region="Caeruleaum"><span>⚓</span><b>Caeruleaum</b><small>Shipwreck & opening quests</small></button>
+        <button class="region-card" data-region="Farmstead"><span>🌾</span><b>Farmstead</b><small>Mountain route to Gladius</small></button>
+        <button class="region-card" data-region="Gladius"><span>🛡️</span><b>Gladius</b><small>City and recovery arc</small></button>
+        <button class="region-card" data-region="Pontis Mille"><span>🏛️</span><b>Pontis Mille</b><small>Mines, fields and city quests</small></button>
+        <button class="region-card" data-region="The Groves"><span>🌲</span><b>The Groves</b><small>Forest and elf questlines</small></button>
+        <button class="region-card" data-region="Ice Village"><span>❄️</span><b>Ice Village</b><small>Required trial and side quests</small></button>
+        <button class="region-card" data-region="Terravilla"><span>⛰️</span><b>Terravilla</b><small>Earth-themed quest arc</small></button>
+        <button class="region-card" data-region="Blood Temple"><span>🔥</span><b>Blood Temple</b><small>Final Primis storyline</small></button>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div>
+        <div class="eyebrow">FOURLEAF REBORN</div>
+        <h2>About this wiki</h2>
+        <p>This site reorganizes factual Primis quest information into a player-friendly Fourleaf Reborn reference. Quest names, NPCs, prerequisites, objectives and reward information are paraphrased rather than copied as source prose.</p>
+        <p class="muted">Reward rolls may be independent or chance-based where noted. Coordinates shown in the original guide are rounded NPC positions; use in-game quest tracking for exact destinations.</p>
+      </div>
+      <div class="source-box">
+        <b>Reference</b>
+        <p>Primis Quest Guide • Nightbreak Wiki</p>
+        <a href="https://wiki.nightbreak.io/EliteMobs/primis_info/" target="_blank" rel="noopener">Open original reference ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>🍀 Fourleaf Reborn • Primis Wiki</span>
+      <span>Built for the Fourleaf community</span>
+    </div>
+  </footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # 🍀 Fourleaf SMP — Primis Wiki
 
-A Fourleaf Reborn reference guide for the **Primis** EliteMobs questline.
+A Fourleaf Reborn reference guide for the **Primis** dungeon questline.
 
 ## 📚 Wiki
 - [Primis Overview](docs/primis/README.md)

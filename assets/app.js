@@ -45,12 +45,13 @@ const sideGroups={
 };
 
 const required=["Catch me if you can","Taking the bait","Get them off my back!","Make them go ouch"];
+const secondary=["Stargazing","Stay A While and Listen","The Battle for Gladius"];
 const quests=mainQuests.map((q,i)=>({id:i+1,type:"main",name:q[0],region:q[1],npc:q[2],pre:q[3],reward:q[4],objective:q[5]}));
-for(const [region,list] of Object.entries(sideGroups)) for(const q of list) quests.push({id:null,type:required.includes(q[0])?"required":"side",name:q[0],region,npc:q[1],pre:q[2],reward:q[3],objective:"See the in-game quest tracker for the detailed objective."});
+for(const [region,list] of Object.entries(sideGroups)) for(const q of list) quests.push({id:null,type:required.includes(q[0])?"required":secondary.includes(q[0])?"secondary":"side",name:q[0],region,npc:q[1],pre:q[2],reward:q[3],objective:"See the in-game quest tracker for the detailed objective."});
 
 const search=document.getElementById("search"), typeFilter=document.getElementById("typeFilter"), regionFilter=document.getElementById("regionFilter"), results=document.getElementById("results"), empty=document.getElementById("empty");
 [...new Set(quests.map(q=>q.region))].sort().forEach(r=>regionFilter.insertAdjacentHTML("beforeend",`<option value="${r}">${r}</option>`));
-document.getElementById("sideCount").textContent=quests.filter(q=>q.type!=="main").length+" optional";
+document.getElementById("sideCount").textContent=quests.filter(q=>q.type==="side").length+" side";
 
 function render(){
  const s=search.value.toLowerCase().trim(), t=typeFilter.value, r=regionFilter.value;

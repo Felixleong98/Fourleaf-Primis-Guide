@@ -1,14 +1,14 @@
-const search=document.getElementById("search"), typeFilter=document.getElementById("typeFilter"), regionFilter=document.getElementById("regionFilter"), results=document.getElementById("results"), empty=document.getElementById("empty");
+const search=document.getElementById("search"), typeFilter=document.getElementById("typeFilter"), regionFilter=document.getElementById("regionFilter"), results=document.getElementById("results"), empty=document.getElementById("empty"), resultCount=document.getElementById("resultCount");
 const params=new URLSearchParams(location.search);
 [...new Set(quests.map(q=>q.region))].sort().forEach(r=>regionFilter.insertAdjacentHTML("beforeend",`<option value="${r}">${r}</option>`));
 if(params.get("region")) regionFilter.value=params.get("region");
 if(params.get("type")) typeFilter.value=params.get("type");
-document.getElementById("sideCount").textContent=quests.filter(q=>q.type==="side").length+" side";
+document.getElementById("sideCount").textContent=quests.length-mainQuests.length+" optional";
 
 function render(){
  const s=search.value.toLowerCase().trim(), t=typeFilter.value, r=regionFilter.value;
  const out=quests.filter(q=>(t==="all"||q.type===t)&&(r==="all"||q.region===r)&&(!s||[q.name,q.region,q.npc,q.pre,q.reward,q.objective].join(" ").toLowerCase().includes(s)));
- results.innerHTML=out.map(q=>`<article class="quest" onclick="openQuest(q)" style="cursor:pointer">
+ results.innerHTML=out.map((q,i)=>`<article class="quest" data-quest-index="${quests.indexOf(q)}" style="cursor:pointer">
   <div class="quest-top"><span class="number">${q.id?"MAIN #"+q.id:q.type.toUpperCase()}</span><span class="tag">${q.region}</span></div>
   <h3>${q.name}</h3>
   <div class="meta">👤 ${q.npc}</div>
@@ -16,6 +16,8 @@ function render(){
   <div class="detail"><b>Objective</b><br>${q.objective}</div>
   <div class="detail reward"><b>🎁 Reward</b><br>${q.reward}</div>
  </article>`).join("");
+ if(resultCount) resultCount.textContent=out.length+" quests shown";
+ results.querySelectorAll(".quest").forEach(card=>card.addEventListener("click",()=>openQuest(quests[Number(card.dataset.questIndex)])));
  empty.classList.toggle("hidden",out.length!==0);
  results.classList.toggle("hidden",out.length===0);
 }

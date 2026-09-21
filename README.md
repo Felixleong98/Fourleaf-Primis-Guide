@@ -18,3 +18,12 @@ A Fourleaf Reborn reference guide for the **Primis** EliteMobs questline.
 Quest information is based on the public Nightbreak Wiki Primis guide and reorganized/paraphrased for Fourleaf Reborn. The source currently identifies the guide as Primis v46.
 
 **Source:** https://wiki.nightbreak.io/EliteMobs/primis_info/
+
+
+## 📖 Expanded Quest Database
+
+- [📜 Main Quest Database — 30 quests](docs/primis/main-quests.md)
+- [📚 Side Quest Database](docs/primis/side-quests.md)
+- [🗺️ Quest Progression](docs/primis/quest-progression.md)
+
+The current source guide describes Primis v46 and a 98-quest interconnected adventure. The repository reorganizes the factual quest data into a Fourleaf Reborn reference format. citeturn2search0

@@ -67,3 +67,24 @@ if (mapHost && mainQuests.length && quests.length) {
     return '<a class="map-node" href="' + (quest ? questUrl(quest) : "#") + '"><span class="map-number">' + (i+1) + '</span><span><b>' + q[0] + '</b><small>' + q[1] + ' • ' + q[2] + '</small></span></a>';
   }).join("") + '<div class="map-note">❄ <b>Ice Trial branch:</b> four required side quests unlock The Trial of Ice.</div>';
 }
+
+const worldMapLightbox = document.getElementById("worldMapLightbox");
+const openWorldMap = document.getElementById("openWorldMap");
+const closeWorldMap = document.getElementById("closeWorldMap");
+if (worldMapLightbox && openWorldMap && closeWorldMap) {
+  const closeMap = () => {
+    worldMapLightbox.hidden = true;
+    document.body.style.overflow = "";
+  };
+  openWorldMap.addEventListener("click", () => {
+    worldMapLightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+  });
+  closeWorldMap.addEventListener("click", closeMap);
+  worldMapLightbox.addEventListener("click", (event) => {
+    if (event.target === worldMapLightbox) closeMap();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !worldMapLightbox.hidden) closeMap();
+  });
+}

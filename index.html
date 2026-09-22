@@ -893,13 +893,13 @@
       <h2>Primis World Map</h2>
       <p class="muted">Use this map to locate the major Primis regions and understand how the adventure area is laid out.</p>
       <figure class="world-map">
-        <button class="map-image-button" id="openWorldMap" type="button" aria-label="Enlarge Primis world map">
+        <button class="map-image-button" id="openWorldMap" type="button" aria-label="Enlarge Primis world map" onclick="document.getElementById('worldMapLightbox').hidden=false;document.body.style.overflow='hidden';">
           <img src="assets/primis-map.webp" alt="Primis world map showing Caeruleaum Village, Pontis Mille, Gladius, Farmstead, Ice Village, Terravilla and Blood Temple" loading="lazy">
         </button>
         <figcaption>Primis world map • Click the map to enlarge.</figcaption>
       </figure>
       <div class="map-lightbox" id="worldMapLightbox" hidden>
-        <button class="map-lightbox-close" id="closeWorldMap" type="button" aria-label="Close enlarged map">×</button>
+        <button class="map-lightbox-close" id="closeWorldMap" type="button" aria-label="Close enlarged map" onclick="document.getElementById('worldMapLightbox').hidden=true;document.body.style.overflow='';">×</button>
         <img src="assets/primis-map.webp" alt="Enlarged Primis world map">
       </div>
     </section>
